@@ -22,7 +22,8 @@
       height: 100vh;
       background-repeat:no-repeat;
       background-attachment: fixed;
-      
+      color: white;
+      background-color: rgba(10, 68, 226, 0.527);
     }
 
     /* .container {
@@ -30,7 +31,7 @@
     } */
   </style>
 
-  <body style="color: white; background-color: rgba(10, 68, 226, 0.527);">
+  <body>
     <!-- <div class="col-md-8 py-5 px-3 mx-auto"> -->
     <div class="container">
           <h1>Edwin Dixon</h1>
@@ -53,9 +54,6 @@
     <div class="col-sm">
       Christchurch, New Zealand
     </div>
-    <div class="col-sm">
-      +64 21 294 9702
-    </div>
     <div class="row">
 
       <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="edwindixon99" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://nz.linkedin.com/in/edwindixon99?trk=profile-badge"></a></div>
@@ -74,9 +72,10 @@
   </div>
 </div>
   </div>
-
+  <occupation place="hi" location="skdlfj" date="sdf" image="dsafj"></occupation>
   <h3 class='sec-heading my-5 text-center g-5'>EDUCATION</h3>
   <div class="container">
+    
     <!-- <div class="row"> -->
       <!-- <div class="col"> -->
         <div class="card" style="width: 64rem;">
@@ -159,7 +158,7 @@
               </ul>
           </div>
       </div>
-  
+      <div id="app">
       <div class=container>
           <h3 class='sec-heading my-5 text-center'>PROJECTS</h3>
           <div>
@@ -191,26 +190,13 @@
   
           <div>
               
-              <a href="https://github.com/edwindixon99" target="_blank" type="button" class="btn btn-primary btn-lg btn-block"><h1>More Projects can be seen on my Github account <i class="fa fa-github"></i></h1><a>
+              <a href="https://github.com/edwindixon99" target="_blank" type="button" class="btn btn-primary btn-lg btn-block"><h1>More Projects <i class="fa fa-github"></i></h1><a>
           </div>
       </div>
-      <div class='container'>
+      <div id="app" class='container'>
           <h3 class='sec-heading my-5 text-center'>TECHNICAL SKILLS</h3>
-          <h5><span class="badge bg-secondary">Python</span>
-            <span class="badge bg-secondary">SQL</span>
-            <span class="badge bg-secondary">C</span>
-            <span class="badge bg-secondary">C++</span>
-            <span class="badge bg-secondary">JavaScript</span>
-            <span class="badge bg-secondary">Java</span>
-            <span class="badge bg-secondary">HTML</span>
-            <span class="badge bg-secondary">Prolog</span>
-            <span class="badge bg-secondary">Apache Spark</span>
-            <span class="badge bg-secondary">Android Studio</span>
-            <span class="badge bg-secondary">OpenGL</span>
-            <span class="badge bg-secondary">CPLEX</span>
-            <span class="badge bg-secondary">Vue.JS</span>
-            <span class="badge bg-secondary">Git</span>
-            <span class="badge bg-secondary">Node.JS</span>
+          <h5>
+            <span v-for="skill in skills" class="badge bg-secondary ms-1">{{ skill.text }}</span>
           </h3>
   
       </div>
@@ -246,21 +232,14 @@
   
 
   
-      <div class='container'>
+      <div id="app" class='container'>
           <h3 class='sec-heading my-5 text-center'>INTERESTS</h3>
-          <h5><span class="badge bg-secondary">Basketball</span>
-            <span class="badge bg-secondary">NBA</span>
-            <span class="badge bg-secondary">Fitness</span>
-            <span class="badge bg-secondary">Technology</span>
-            <span class="badge bg-secondary">Travel</span>
-            <span class="badge bg-secondary">Video Games</span>
-            <span class="badge bg-secondary">Films</span>
-            <span class="badge bg-secondary">Sports</span>
-            <span class="badge bg-secondary">Sustainability</span>
-            <span class="badge bg-secondary">Volleyball</span>
+          <h5 >
+            <span v-for="interest in interests" class="badge bg-secondary ms-1">{{ interest.text }}</span>
           </h5>
   
       </div>
+    </div>
       
   
   
@@ -294,4 +273,79 @@
 <p>`</p>
 <p>`</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+
+  Vue.component('occupation', {
+    // camelCase in JavaScript
+    props: ['image', 'occupation', 'location', 'date', 'place'],
+    template: `<div class="card" style="width: 64rem;">
+          <img class="card-img-top img-fluid" src="{{ image }}" class="img-fluid" alt="Card image cap">
+          <div class="card-body" style="color:black">
+            <div class="container">
+              <div class='row card-header'>
+                  <p class='subtitle'>{{ place }}</p>
+              
+              <div class='row'>
+                  <div class='col'><p class='text-muted'>{{ date }}</p></div>
+                  <div class='col'><p class='text-muted'>{{ location }}</p></div>
+              </div>
+            </div>
+              <div class='row'>
+                  <p class='text-muted'>Notable Courses</p>
+              </div>
+              <div class='row'>
+                <div class='col-md-6'>
+                      <li>Data and Network Security</li>
+                      <li>Internet Technology and Engineering</li>
+                      <li>Human Computer Interaction</li>
+                </div>
+                <div class='col-md-6'>
+                      <li>Computer Graphics</li>
+                      <li>Artificial Intelligence</li>
+                    </div>
+              
+            </div>
+          </div>
+        </div>`
+  })
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!',
+      skills: [
+        { text:  'Python' },
+        { text:  'SQL' },
+        { text:  'C' },
+        { text:  'C++' },
+        { text:  'JavaScript' },
+        { text:  'Java' },
+        { text:  'HTML' },
+        { text:  'Prolog' },
+        { text:  'Apache Spark' },
+        { text:  'Android Studio' },
+        { text:  'OpenGL' },
+        { text:  'CPLEX' },
+        { text:  'Vue.JS' },
+        { text:  'Git' },
+        { text:  'Node.JS' }
+    ],
+
+    interests: [
+    { text:  'Basketball' },
+    { text:  'NBA' },
+    { text:  'Fitness' },
+    { text:  'Technology' },
+    { text:  'Travel' },
+    { text:  'Video Games' },
+    { text:  'Films' },
+    { text:  'Sports' },
+    { text:  'Sustainability' },
+    { text:  'Volleyball' }
+    ]
+
+    }
+  })
+  </script>
 </html>
