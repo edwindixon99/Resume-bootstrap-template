@@ -266,7 +266,7 @@
       </div>
     </div>
     <div id="components-demo">
-      <button-counter></button-counter>
+      <occupation title='Basketball Coach' place="Riccarton High School" location="Christchurch, New Zealand" date="2016 - 2017" :desc="['dfs','sdfds','sdfs','sdf','dfs']"></occupation>
     </div>
   
   
@@ -304,47 +304,29 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   <script>
 
-  // Vue.component('occupation', {
-  //   // camelCase in JavaScript
-  //   props: ['image', 'occupation', 'location', 'date', 'place'],
-  //   template: `<div class="card" style="width: 64rem;">
-  //         <img class="card-img-top img-fluid" src="{{ image }}" class="img-fluid" alt="Card image cap">
-  //         <div class="card-body" style="color:black">
-  //           <div class="container">
-  //             <div class='row card-header'>
-  //                 <p class='subtitle'>{{ place }}</p>
+  Vue.component('occupation', {
+    // camelCase in JavaScript
+    props: ['title', 'image', 'occupation', 'location', 'date', 'place', 'desc'],
+    template: `<div class="card" style="width: 64rem;">
+          <div class="card-body" style="color:black">
+            <div class="container">
+              <div class='row card-header'>
+                  <h4>{{ title }}</h4>
+
+                  <p class='subtitle'>{{ place }}</p>
               
-  //             <div class='row'>
-  //                 <div class='col'><p class='text-muted'>{{ date }}</p></div>
-  //                 <div class='col'><p class='text-muted'>{{ location }}</p></div>
-  //             </div>
-  //           </div>
-  //             <div class='row'>
-  //                 <p class='text-muted'>Notable Courses</p>
-  //             </div>
-  //             <div class='row'>
-  //               <div class='col-md-6'>
-  //                     <li>Data and Network Security</li>
-  //                     <li>Internet Technology and Engineering</li>
-  //                     <li>Human Computer Interaction</li>
-  //               </div>
-  //               <div class='col-md-6'>
-  //                     <li>Computer Graphics</li>
-  //                     <li>Artificial Intelligence</li>
-  //                   </div>
-              
-  //           </div>
-  //         </div>
-  //       </div>`
-  // })
-  Vue.component('button-counter', {
-  data: function () {
-    return {
-      count: 0
-    }
-  },
-  template: '<button class="btn primary-btn" v-on:click="count++">You clicked me {{ count }} times.</button>'
-})
+              <div class='row'>
+                  <div class='col'><p class='text-muted'>{{ date }}</p></div>
+                  <div class='col'><p class='text-muted'>{{ location }}</p></div>
+              </div>
+            </div>
+              <div class='row'>
+                      <li v-for="text in desc">{{ text }}</li>
+            </div>
+          </div>
+        </div>`
+  })
+ 
 
 new Vue({ el: '#components-demo' })
 
