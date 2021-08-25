@@ -18,7 +18,13 @@
     }
 
     body {
-      background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+      background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1)
+    ),
+    url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+      /* background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg'); */
       height: 100vh;
       background-repeat:no-repeat;
       background-attachment: fixed;
@@ -29,6 +35,17 @@
     /* .container {
       padding: 50px;
     } */
+    footer {
+      padding: 10px;
+    }
+
+    a {outline : none;}
+
+  a:hover{
+    text-decoration: none;
+  }
+
+    
   </style>
   
   <body>
@@ -85,7 +102,7 @@
         <a href="https://www.linkedin.com/in/edwindixon99/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" class="img-fluid"></a>
       </div>
       <div class="col-sm">
-        <a href="https://play.google.com/store/apps/developer?id=EJD+Ltd."><img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white" class="img-fluid"></a>
+        <a href="https://play.google.com/store/apps/dev?id=5387836149437303412"><img src="https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white" class="img-fluid"></a>
       </div>
       <div class="col-sm">
         <a href="https://github.com/edwindixon99"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" class="img-fluid"></a>
@@ -163,59 +180,52 @@
       <div class=container>
           <h3 class='sec-heading my-5 text-center'>VOLUNTEER EXPERIENCE</h3>
           <div>
-              <h4 class='title'>Basketball Coach</h4>
-              <p class='subtitle'>Riccarton High School</p>
-              <p class='text-muted'>2016 - 2017</p>
-              <p class='text-muted'>Christchurch, New Zealand</p>
-              <ul>
-                  <li>Coached two teams of 13-14 year old boys many of whom many had no prior basketball experience</li>
-                  <li>Allowed me to apply my communication skills to guide my team throughout their development</li>
-              </ul>
+            <div id="components-demo">
+              <occupation title='Basketball Coach' place="Riccarton High School" location="Christchurch, New Zealand" date="2016 - 2017" :desc="['Coached two teams of 13-14 year old boys many of whom many had no prior basketball experience', 'Allowed me to apply my communication skills to guide my team throughout their development']"></occupation>
+              <occupation title='Flag Bearer' place="ICC Cricket World Cup" location="Christchurch, New Zealand" date="2015" :desc="['I was lucky enough to be given the opportunity display flags for three countries during their national anthems before matches of the world cup']"></occupation>
+            </div>
           </div>
               
-          <div>
-              <h4 class='title'>Flag Bearer</h4>
-              <p class='subtitle'>ICC Cricket World Cup</p>
-              <p class='text-muted'>2015</p>
-              <p class='text-muted'>Christchurch, New Zealand</p>
-              <ul>
-                  <li>I was lucky enough to be given the opportunity display flags for three countries during their national anthems before matches of the world cup</li>
-              </ul>
-          </div>
+
       </div>
       <div id="app">
       <div class=container>
           <h3 class='sec-heading my-5 text-center'>PROJECTS</h3>
           <div>
-              <p class='subtitle'>Kiribati Translation Android App</p>
-              <p class='text-muted'>11/2020 - Present</p>
-              <ul>
-                  <li>Learned the basics of Android Studio and refined my Java and SQL skills</li>
-                  <li>Released app to google play store in July 2021 and continue to develop it</li>
-              </ul>
-          </div>
+            <div id="components-demo">
+              <a href="https://play.google.com/store/apps/details?id=com.ejd.kiribatitranslate"><occupation 
+              title='Kiribati Translation Android App' 
+              date="11/2020 - Present" 
+              :desc="[
+              'Learned the basics of Android Studio and refined my Java and SQL skills',
+              'Released app to google play store in July 2021 and continue to develop it'
+              ]"></occupation></a>
               
-          <div>
-              <p class='subtitle'>Petition Website</p>
-              <p class='text-muted'>03/2020 - 05/2020</p>
-              
-              <ul>
-                  <li>Academic project where I learned and gained experience with JavaScript, Node.JS, HTML and Vue.JS</li>
-              </ul>
+              <a href="https://github.com/edwindixon99/SENG365-Web-Computing-Architectures">
+              <occupation 
+              title='Petition Website'
+              date="03/2020 - 05/2020" 
+              :desc="[
+              'Academic project where I build a web application  learned and gained experience with JavaScript, Node.JS, HTML and Vue.JS',
+              'Backend made with javascript expressjs SQL',
+              'Vuejs framework Frontend'
+              ]"></occupation>
+              </a>
+              <a href="https://github.com/edwindixon99/COSC364-Internet-Technology-and-Engineering">
+              <occupation 
+              title='Routing Information Protocol'
+              date="03/2020 - 05/2020" 
+              :desc="[
+              'Worked with a partner to fully implement a working version of the protocol in Python'
+              ]"></occupation>
+              </a>
+            </div>
           </div>
+ 
   
           <div>
-              <p class='subtitle'>Routing Information Protocol</p>
-              <p class='text-muted'>03/2020 - 05/2020</p>
               
-              <ul>
-                  <li>Worked with a partner to fully implement a working version of the protocol in Python</li>
-              </ul>
-          </div>
-  
-          <div>
-              
-              <a href="https://github.com/edwindixon99" target="_blank" type="button" class="btn btn-primary btn-lg btn-block"><h1>More Projects <i class="fa fa-github"></i></h1><a>
+              <a href="https://github.com/edwindixon99" target="_blank" type="button" class="btn btn-primary btn-lg btn-block" style="width: 64rem;"><h1>More Projects <i class="fa fa-github"></i></h1><a>
           </div>
       </div>
       <div id="app" class='container'>
@@ -265,9 +275,7 @@
   
       </div>
     </div>
-    <div id="components-demo">
-      <occupation title='Basketball Coach' place="Riccarton High School" location="Christchurch, New Zealand" date="2016 - 2017" :desc="['dfs','sdfds','sdfs','sdf','dfs']"></occupation>
-    </div>
+
   
   
     
@@ -279,26 +287,6 @@
   <footer>
     
 
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
-<p>`</p>
 <!-- <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="edwindixon99" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://nz.linkedin.com/in/edwindixon99?trk=profile-badge"></a></div> -->
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -306,8 +294,11 @@
 
   Vue.component('occupation', {
     // camelCase in JavaScript
-    props: ['title', 'image', 'occupation', 'location', 'date', 'place', 'desc'],
+    props: ['title', 'image', 'occupation', 'location', 'date', 'place', 'desc', 'imgage'],
     template: `<div class="card" style="width: 64rem;">
+            <div style="text-align: center;">
+              <img class="card-img-top img-fluid" src=imgage class="img-fluid mx-auto" style="width:35%; position: center;" alt="">
+            </div>
           <div class="card-body" style="color:black">
             <div class="container">
               <div class='row card-header'>
