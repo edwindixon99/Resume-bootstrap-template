@@ -33,7 +33,7 @@
     }
 
     .w64 { 
-      width: 64rem;
+      /* width: 64rem; */
       text-align: justify;
     } 
     
@@ -54,15 +54,15 @@
 
     <div class="container w64">
       <div class="row">
-        <div class="col-9">
+        <div class="col-8">
         <h1>Edwin Dixon</h1>
   
         <h2><small class="text-muted">Computer Science Graduate</small></h2>
       </div>
-      <div class="col">
-        <div class="col-9">edwindixon6@gmail.com</div>
+      <div class="col-3">
+        <div >edwindixon6@gmail.com</div>
       
-        <div class="col">Christchurch, New Zealand</div>
+        <div>Christchurch, New Zealand</div>
         <div class="row">
 
         <!-- <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="edwindixon99" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://nz.linkedin.com/in/edwindixon99?trk=profile-badge"></a></div> -->
@@ -81,13 +81,14 @@
 
     <!-- <div class="col-md-8 py-5 px-3 mx-auto"> -->
   
-          <div class="row"><div><p>I am a graduate with a passion for software development excited to pursue a career where I can put my skills to use in an industry setting. I am a team player that wants to join a great team of people and play a part in exciting endeavors while learning and experiencing as much as possible.</p></div></div>
+          <div class="row"><div class="col-11"><p>I am a graduate with a passion for software development excited to pursue a career where I can put my skills to use in an industry setting. I am a team player that wants to join a great team of people and play a part in exciting endeavors while learning and experiencing as much as possible.</p></div></div>
     
 
 
 
 
   
+</div>
 </div>
   </div>
   <!-- <occupation place="hi" location="skdlfj" date="sdf" image="dsafj"></occupation> -->
@@ -205,11 +206,12 @@
               <a href="https://github.com/edwindixon99" target="_blank" type="button" class="btn btn-primary btn-lg btn-block" style="width: 64rem;"><h1>More Projects <i class="fa fa-github"></i></h1><a>
           </div>
       </div>
-      <div id="app" class='container'>
-          <h3 class='sec-heading my-5 text-center'>TECHNICAL SKILLS</h3>
-          <h5>
+      <div id="app" class='container '>
+          <h3 class='sec-heading my-5 text-center '>TECHNICAL SKILLS</h3>
+          <div class="col-12"><h5>
             <span v-for="skill in skills" class="badge bg-secondary ms-1">{{ skill.text }}</span>
           </h3>
+        </div>
   
       </div>
   
@@ -246,9 +248,10 @@
   
       <div id="app" class='container'>
           <h3 class='sec-heading my-5 text-center'>INTERESTS</h3>
-          <h5 >
+          <div class="col-12"><h5 >
             <span v-for="interest in interests" class="badge bg-secondary ms-1">{{ interest.text }}</span>
           </h5>
+          </div>
   
       </div>
     </div>
