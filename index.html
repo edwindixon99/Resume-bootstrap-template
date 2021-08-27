@@ -132,11 +132,18 @@
           </div>
         </div>
       </div>
+      </div>
+      <div class="row">
           <!-- <div class="col"> -->
-            <div class="card" style="width: 64rem;">
-              <div style="text-align: center;">
-              <img class="card-img-top img-fluid" src="https://d2u4q3iydaupsp.cloudfront.net/GTjwxZduoclugHPB7MGGXN3mHrIzZE2g4nuH5B6jiEbrC8DJduFRbFU58D5O0sHBKER3GmEP8H3Tb4n3IXqvKNVY4VliUTNccimJnLJ9UUqiKetyGpEPnGBxFKww56pt" class="img-fluid mx-auto" style="width:35%; position: center;" alt="Card image cap">
+            <div id="components-demo">
+              <occupation title='NCEA Level 1-3' place="Riccarton High School" location="Christchurch, New Zealand" date="02/2013 - 11/2017" image="https://d2u4q3iydaupsp.cloudfront.net/GTjwxZduoclugHPB7MGGXN3mHrIzZE2g4nuH5B6jiEbrC8DJduFRbFU58D5O0sHBKER3GmEP8H3Tb4n3IXqvKNVY4VliUTNccimJnLJ9UUqiKetyGpEPnGBxFKww56pt"></occupation>
             </div>
+          </div>
+            <!-- <div class="card" style="width: 64rem;">
+              <div style="text-align: center;">
+              <img class="card-img-top img-fluid" src="https://d2u4q3iydaupsp.cloudfront.net/GTjwxZduoclugHPB7MGGXN3mHrIzZE2g4nuH5B6jiEbrC8DJduFRbFU58D5O0sHBKER3GmEP8H3Tb4n3IXqvKNVY4VliUTNccimJnLJ9UUqiKetyGpEPnGBxFKww56pt" class="img-fluid mx-auto" style="width:35%; position: center;" alt="">
+            </div>
+            
               <div class="card-body" style="color:black">
                 <div class="container">
                   <div class='row card-header'>
@@ -149,7 +156,7 @@
             </div>
               </div>
           </div>
-      </div>
+      </div> -->
     <!-- </div> -->
     
     </div>
@@ -169,7 +176,8 @@
       <div id="app">
       <div class=container>
           <h3 class='sec-heading my-5 text-center'>PROJECTS</h3>
-          <div>
+          <div class="row">
+            
             <div id="components-demo">
               <a href="https://play.google.com/store/apps/details?id=com.ejd.kiribatitranslate"><occupation 
               title='Kiribati Translation Android App' 
@@ -178,7 +186,8 @@
               'Learned the basics of Android Studio and refined my Java and SQL skills',
               'Released app to google play store in July 2021 and continue to develop it'
               ]"></occupation></a>
-              
+            </div>
+            <div class="row">
               <a href="https://github.com/edwindixon99/SENG365-Web-Computing-Architectures">
               <occupation 
               title='Petition Website'
@@ -189,6 +198,8 @@
               'Vuejs framework Frontend'
               ]"></occupation>
               </a>
+            </div>
+            <div class="row">
               <a href="https://github.com/edwindixon99/COSC364-Internet-Technology-and-Engineering">
               <occupation 
               title='Routing Information Protocol'
@@ -274,10 +285,10 @@
 
   Vue.component('occupation', {
     // camelCase in JavaScript
-    props: ['title', 'image', 'occupation', 'location', 'date', 'place', 'desc', 'imgage'],
+    props: ['title', 'image', 'occupation', 'location', 'date', 'place', 'desc', 'image'],
     template: `<div class="card" style="width: 64rem;">
             <div style="text-align: center;">
-              <img class="card-img-top img-fluid" src=imgage class="img-fluid mx-auto" style="width:35%; position: center;" alt="">
+              <img class="card-img-top img-fluid" :src=image style="width:35%; position: center;" alt="">
             </div>
           <div class="card-body" style="color:black">
             <div class="container">
@@ -295,6 +306,7 @@
                       <li v-for="text in desc">{{ text }}</li>
             </div>
           </div>
+        </div>
         </div>`
   })
  
